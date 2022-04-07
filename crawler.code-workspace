@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "crawler-backend"
+		},
+		{
+			"path": "crawler-frontend"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
