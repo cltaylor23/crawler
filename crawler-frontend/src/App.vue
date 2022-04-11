@@ -8,11 +8,14 @@
       <input name="url" v-model="url" />
       <button type="submit">Get Links</button>
     </form>
-    <ul v-if="!loading && data && data.length">
-      <li :key="url" v-for="url of data">
-        <a :href="url" target="_blank">{{ url }}</a>
-      </li>
-    </ul>
+    <template v-if="!loading && data && data.length">
+      <p>{{ data.length }} Results Found</p>
+      <ul>
+        <li :key="url" v-for="url of data">
+          <a :href="url" target="_blank">{{ url }}</a>
+        </li>
+      </ul>
+    </template>
     <p v-if="loading">Loading...</p>
     <p v-if="error" class="error">{{ error }}</p>
   </main>
@@ -66,7 +69,8 @@ async function handleSubmit() {
   color: red;
 }
 ul {
-  padding-left: 18px;
+  list-style-type: none;
+  padding: 0;
 }
 label {
   margin-right: 4px;
